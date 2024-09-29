@@ -161,3 +161,54 @@ public class Address {
     private String state;
 }
 ```
+## 12.  @Repository
+- **Description**: Specialized annotation for components dealing with data access, making it easier to handle data operations.
+- **Usage**: Applied at the class level to indicate that the class is a repository (part of the persistence layer).
+```java
+@Repository
+public class MyRepository {
+    // Data access logic here
+}
+```
+
+---
+
+## 13.  @EnableJpaRepositories
+- **Description**: Enables the detection of Spring Data JPA repositories and their implementation.
+- **Usage**: Typically used in configuration classes to enable JPA repositories in the application.
+```java
+@Configuration
+@EnableJpaRepositories(basePackages = "com.example.repository")
+public class JpaConfig {
+    // Configuration related to JPA repositories
+}
+```
+
+---
+
+## 14. @EnableTransactionManagement
+- **Description**: Enables annotation-driven transaction management in Spring applications.
+- **Usage**: Typically used in configuration classes to allow Spring's transaction annotations to be processed.
+```java
+@Configuration
+@EnableTransactionManagement
+public class TransactionConfig {
+    // Transaction management configuration
+}
+```
+
+---
+
+## 15.  @Transactional
+- **Description**: Declares that the method or class is transactional and will be executed within a transactional context.
+- **Usage**: Can be applied at both method and class levels to control transaction boundaries.
+```java
+@Service
+public class TransactionalService {
+
+    @Transactional
+    public void performTransactionalOperation() {
+        // Transactional operation logic here
+    }
+}
+```
